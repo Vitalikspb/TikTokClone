@@ -16,7 +16,6 @@ class HomeViewController: UIViewController {
         control.selectedSegmentIndex = 1
         control.backgroundColor = nil
         control.selectedSegmentTintColor = .white
-        
         return control
     }()
     let horizontalScrollView: UIScrollView = {
