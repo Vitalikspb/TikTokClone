@@ -107,10 +107,10 @@
 		53740B2E26A9861700920092 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				53740B2326A97E1900920092 /* Assets.xcassets */,
 				53740B1A26A97E1500920092 /* AppDelegate.swift */,
-				53740B5626A98AAD00920092 /* GoogleService-Info.plist */,
 				53740B1C26A97E1500920092 /* SceneDelegate.swift */,
+				53740B2326A97E1900920092 /* Assets.xcassets */,
+				53740B5626A98AAD00920092 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -162,8 +162,8 @@
 		53740B3426A986A200920092 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				53740B1E26A97E1500920092 /* HomeViewController.swift */,
 				53740B4626A9873B00920092 /* TabBarViewController.swift */,
+				53740B1E26A97E1500920092 /* HomeViewController.swift */,
 				53740B3626A986C700920092 /* ExploreViewController.swift */,
 				53740B3826A986D400920092 /* CameraViewController.swift */,
 				53740B3A26A986E100920092 /* NotificationsViewController.swift */,
