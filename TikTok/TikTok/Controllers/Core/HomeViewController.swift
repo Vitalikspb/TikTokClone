@@ -10,11 +10,18 @@ import UIKit
 class HomeViewController: UIViewController {
 
     // MARK: - Properties
-    
+    let control: UISegmentedControl = {
+        let title = ["Following", "For you"]
+        let control = UISegmentedControl(items: title)
+        control.selectedSegmentIndex = 1
+        control.backgroundColor = nil
+        control.selectedSegmentTintColor = .white
+        
+        return control
+    }()
     let horizontalScrollView: UIScrollView = {
        let scrollView = UIScrollView()
         scrollView.bounces = false
-        scrollView.backgroundColor = .red
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.isPagingEnabled = true
         return scrollView
@@ -40,9 +47,9 @@ class HomeViewController: UIViewController {
         view.addSubview(horizontalScrollView)
         
         setUpFeed()
-        
-        horizontalScrollView.contentOffset = CGPoint(x: view.width,
-                                                        y: 0)
+        horizontalScrollView.delegate = self
+        horizontalScrollView.contentOffset = CGPoint(x: view.width, y: 0)
+        setUpHeaderButtons()
     }
     
     override func viewDidLayoutSubviews() {
@@ -50,7 +57,20 @@ class HomeViewController: UIViewController {
         horizontalScrollView.frame = view.bounds
     }
     
+    // MARK: - Selectors
+    
+    @objc private func didChangeSegmentedControl(_ sender: UISegmentedControl) {
+        horizontalScrollView.setContentOffset(CGPoint(x: view.width * CGFloat(sender.selectedSegmentIndex),
+                                                      y: 0),
+                                              animated: true)
+    }
+    
     // MARK: - Helpers Function
+    
+    func setUpHeaderButtons() {
+        control.addTarget(self, action: #selector(didChangeSegmentedControl(_:)), for: .valueChanged)
+        navigationItem.titleView = control
+    }
 
     private func setUpFeed() {
         horizontalScrollView.contentSize = CGSize(width: view.width * 2,
@@ -143,6 +163,19 @@ extension HomeViewController: UIPageViewControllerDataSource {
         } else {
             // For You
             return forYouPosts
+        }
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension HomeViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x == 0 || scrollView.contentOffset.x <= (view.width / 2) {
+            control.selectedSegmentIndex = 0
+        } else if scrollView.contentOffset.x > (view.width / 2) {
+            control.selectedSegmentIndex = 1
+            
         }
     }
 }
