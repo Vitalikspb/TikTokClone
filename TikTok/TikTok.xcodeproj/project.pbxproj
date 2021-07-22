@@ -27,6 +27,8 @@
 		53740B5326A987BA00920092 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B5226A987BA00920092 /* AuthenticationManager.swift */; };
 		53740B5526A987CB00920092 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B5426A987CB00920092 /* HapticsManager.swift */; };
 		53740B5726A98AAD00920092 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53740B5626A98AAD00920092 /* GoogleService-Info.plist */; };
+		5392F26B26A9CFD40014DD40 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392F26A26A9CFD40014DD40 /* Extension.swift */; };
+		5392F26D26A9D5370014DD40 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392F26C26A9D5370014DD40 /* PostModel.swift */; };
 		F9E10E65C8609D6AA95C63CD /* Pods_TikTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF33EDB037F6D4CD20DE198 /* Pods_TikTok.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,8 @@
 		53740B5226A987BA00920092 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		53740B5426A987CB00920092 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		53740B5626A98AAD00920092 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5392F26A26A9CFD40014DD40 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		5392F26C26A9D5370014DD40 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		6A518C6562389D934EA211BA /* Pods-TikTok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTok.release.xcconfig"; path = "Target Support Files/Pods-TikTok/Pods-TikTok.release.xcconfig"; sourceTree = "<group>"; };
 		FD5B1B2B5480159FFFB30219 /* Pods-TikTok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTok.debug.xcconfig"; path = "Target Support Files/Pods-TikTok/Pods-TikTok.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				53740B1A26A97E1500920092 /* AppDelegate.swift */,
+				5392F26A26A9CFD40014DD40 /* Extension.swift */,
 				53740B1C26A97E1500920092 /* SceneDelegate.swift */,
 				53740B2326A97E1900920092 /* Assets.xcassets */,
 				53740B5626A98AAD00920092 /* GoogleService-Info.plist */,
@@ -141,6 +146,7 @@
 		53740B3226A9864C00920092 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5392F26C26A9D5370014DD40 /* PostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,10 +360,12 @@
 				53740B3926A986D400920092 /* CameraViewController.swift in Sources */,
 				53740B4726A9873B00920092 /* TabBarViewController.swift in Sources */,
 				53740B1F26A97E1500920092 /* HomeViewController.swift in Sources */,
+				5392F26B26A9CFD40014DD40 /* Extension.swift in Sources */,
 				53740B4326A9871800920092 /* SignUpViewController.swift in Sources */,
 				53740B5326A987BA00920092 /* AuthenticationManager.swift in Sources */,
 				53740B3B26A986E100920092 /* NotificationsViewController.swift in Sources */,
 				53740B4126A9870F00920092 /* SignInViewController.swift in Sources */,
+				5392F26D26A9D5370014DD40 /* PostModel.swift in Sources */,
 				53740B3D26A986EE00920092 /* ProfileViewController.swift in Sources */,
 				53740B4F26A9879400920092 /* StorageManager.swift in Sources */,
 				53740B1B26A97E1500920092 /* AppDelegate.swift in Sources */,
