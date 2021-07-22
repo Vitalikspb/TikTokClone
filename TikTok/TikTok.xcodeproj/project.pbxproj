@@ -22,7 +22,6 @@
 		53740B4526A9872100920092 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B4426A9872100920092 /* SettingsViewController.swift */; };
 		53740B4726A9873B00920092 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B4626A9873B00920092 /* TabBarViewController.swift */; };
 		53740B4B26A9876B00920092 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B4A26A9876B00920092 /* PostViewController.swift */; };
-		53740B4D26A9878300920092 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B4C26A9878300920092 /* APICaller.swift */; };
 		53740B4F26A9879400920092 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B4E26A9879400920092 /* StorageManager.swift */; };
 		53740B5126A987A600920092 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B5026A987A600920092 /* DatabaseManager.swift */; };
 		53740B5326A987BA00920092 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B5226A987BA00920092 /* AuthenticationManager.swift */; };
@@ -50,7 +49,6 @@
 		53740B4426A9872100920092 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		53740B4626A9873B00920092 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		53740B4A26A9876B00920092 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
-		53740B4C26A9878300920092 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		53740B4E26A9879400920092 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		53740B5026A987A600920092 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		53740B5226A987BA00920092 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 		53740B3326A9865400920092 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				53740B4C26A9878300920092 /* APICaller.swift */,
 				53740B4E26A9879400920092 /* StorageManager.swift */,
 				53740B5026A987A600920092 /* DatabaseManager.swift */,
 				53740B5226A987BA00920092 /* AuthenticationManager.swift */,
@@ -353,7 +350,6 @@
 				53740B3726A986C700920092 /* ExploreViewController.swift in Sources */,
 				53740B3F26A9870500920092 /* UserListViewController.swift in Sources */,
 				53740B4526A9872100920092 /* SettingsViewController.swift in Sources */,
-				53740B4D26A9878300920092 /* APICaller.swift in Sources */,
 				53740B4B26A9876B00920092 /* PostViewController.swift in Sources */,
 				53740B3926A986D400920092 /* CameraViewController.swift in Sources */,
 				53740B4726A9873B00920092 /* TabBarViewController.swift in Sources */,
