@@ -33,6 +33,7 @@
 		5392F26F26AA01920014DD40 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392F26E26AA01920014DD40 /* CommentsViewController.swift */; };
 		5392F27126AA0A540014DD40 /* PostComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392F27026AA0A540014DD40 /* PostComments.swift */; };
 		5392F27326AA0A7B0014DD40 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392F27226AA0A7B0014DD40 /* User.swift */; };
+		53CD09A526AADBF900D2D487 /* ferrari.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 53CD09A426AADBF900D2D487 /* ferrari.mp4 */; };
 		F9E10E65C8609D6AA95C63CD /* Pods_TikTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF33EDB037F6D4CD20DE198 /* Pods_TikTok.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		5392F26E26AA01920014DD40 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		5392F27026AA0A540014DD40 /* PostComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComments.swift; sourceTree = "<group>"; };
 		5392F27226AA0A7B0014DD40 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		53CD09A426AADBF900D2D487 /* ferrari.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ferrari.mp4; sourceTree = "<group>"; };
 		6A518C6562389D934EA211BA /* Pods-TikTok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTok.release.xcconfig"; path = "Target Support Files/Pods-TikTok/Pods-TikTok.release.xcconfig"; sourceTree = "<group>"; };
 		FD5B1B2B5480159FFFB30219 /* Pods-TikTok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTok.debug.xcconfig"; path = "Target Support Files/Pods-TikTok/Pods-TikTok.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 			children = (
 				53740B1A26A97E1500920092 /* AppDelegate.swift */,
 				5392F26A26A9CFD40014DD40 /* Extension.swift */,
+				53CD09A426AADBF900D2D487 /* ferrari.mp4 */,
 				53740B1C26A97E1500920092 /* SceneDelegate.swift */,
 				53740B2326A97E1900920092 /* Assets.xcassets */,
 				53740B5626A98AAD00920092 /* GoogleService-Info.plist */,
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53740B2726A97E1900920092 /* LaunchScreen.storyboard in Resources */,
+				53CD09A526AADBF900D2D487 /* ferrari.mp4 in Resources */,
 				53740B2426A97E1900920092 /* Assets.xcassets in Resources */,
 				53740B5726A98AAD00920092 /* GoogleService-Info.plist in Resources */,
 			);

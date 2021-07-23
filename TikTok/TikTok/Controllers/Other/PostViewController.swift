@@ -5,6 +5,7 @@
 //  Created by VITALIY SVIRIDOV on 22.07.2021.
 //
 
+import AVFoundation
 import UIKit
 
 protocol PostViewControllerDelegate: AnyObject {
@@ -18,6 +19,7 @@ class PostViewController: UIViewController {
     
     weak var delegate: PostViewControllerDelegate?
     var model: PostModel
+    var player: AVPlayer?
     
     private let likeButton: UIButton = {
        let button = UIButton()
@@ -58,6 +60,7 @@ class PostViewController: UIViewController {
         return label
     }()
     
+    
     // MARK: - Lifecycle
     
     init(model: PostModel) {
@@ -71,6 +74,8 @@ class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureVideo()
         
         let colors: [UIColor] = [.red, .black, .blue, .yellow, .green]
         view.backgroundColor = colors.randomElement()
@@ -161,6 +166,20 @@ class PostViewController: UIViewController {
     }
     
     // MARK: - Helpers Function
+    
+    private func configureVideo() {
+        guard let path = Bundle.main.path(forResource: "ferrari", ofType: "mp4") else { return }
+        let url = URL(fileURLWithPath: path)
+        player = AVPlayer(url: url)
+        
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = view.bounds
+        playerLayer.videoGravity = .resizeAspectFill
+        view.layer.addSublayer(playerLayer)
+        
+        player?.volume = 0
+        player?.play()
+    }
     
     func setUpButtons() {
         view.addSubview(likeButton)
