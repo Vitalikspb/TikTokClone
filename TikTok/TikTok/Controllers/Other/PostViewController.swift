@@ -14,36 +14,37 @@ protocol PostViewControllerDelegate: AnyObject {
 }
 
 class PostViewController: UIViewController {
-
+    
     // MARK: - Properties
     
     weak var delegate: PostViewControllerDelegate?
     var model: PostModel
     var player: AVPlayer?
+    private var playerDidFinishObserver: NSObjectProtocol?
     
     private let likeButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.tintColor = .white
         return button
     }()
     private let commentButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.setBackgroundImage(UIImage(systemName: "text.bubble.fill"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.tintColor = .white
         return button
     }()
     private let shareButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.setBackgroundImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.tintColor = .white
         return button
     }()
     private let profileButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.setBackgroundImage(UIImage(named: "test"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
         button.layer.masksToBounds = true
@@ -51,7 +52,7 @@ class PostViewController: UIViewController {
         return button
     }()
     private let captionLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.textAlignment = .left
         label.numberOfLines = 0
         label.text = "Check out this video!! #five #video #ASDAS #ASA"
@@ -162,7 +163,7 @@ class PostViewController: UIViewController {
                 }
             }
         }
-
+        
     }
     
     // MARK: - Helpers Function
@@ -179,6 +180,17 @@ class PostViewController: UIViewController {
         
         player?.volume = 0
         player?.play()
+        
+        guard let player = player else { return }
+        
+        playerDidFinishObserver = NotificationCenter.default.addObserver(
+            forName: .AVPlayerItemDidPlayToEndTime,
+            object: player.currentItem,
+            queue: .main
+        ) { _ in
+            player.seek(to: .zero)
+            player.play()
+        }
     }
     
     func setUpButtons() {

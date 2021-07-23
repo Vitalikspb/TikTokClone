@@ -25,7 +25,7 @@ class TabBarViewController: UITabBarController {
                                                        identifier: "qwerty"))
         
         
-        explore.title = "Explore"
+        
         notification.title = "Notifications"
         profile.title = "Profile"
         
