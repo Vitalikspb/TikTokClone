@@ -9,6 +9,7 @@ import UIKit
 
 protocol PostViewControllerDelegate: AnyObject {
     func postViewController(_ vc: PostViewController, didTapCommentButtonFor post: PostModel)
+    func postViewController(_ vc: PostViewController, didTapProfileButtonFor post: PostModel)
 }
 
 class PostViewController: UIViewController {
@@ -36,6 +37,14 @@ class PostViewController: UIViewController {
        let button = UIButton()
         button.setBackgroundImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
+        button.tintColor = .white
+        return button
+    }()
+    private let profileButton: UIButton = {
+       let button = UIButton()
+        button.setBackgroundImage(UIImage(named: "test"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFill
+        button.layer.masksToBounds = true
         button.tintColor = .white
         return button
     }()
@@ -70,6 +79,8 @@ class PostViewController: UIViewController {
         setUpDubleTapToLike()
         
         view.addSubview(captionLabel)
+        view.addSubview(profileButton)
+        profileButton.addTarget(self, action: #selector(didTapProfileButton), for: .touchUpInside)
     }
     
     override func viewDidLayoutSubviews() {
@@ -89,6 +100,11 @@ class PostViewController: UIViewController {
                                     y: view.height - 10 - view.safeAreaInsets.bottom - labelSize.height - (tabBarController?.tabBar.height ?? 0),
                                     width: view.width - size - 12,
                                     height: labelSize.height)
+        profileButton.frame = CGRect(x: likeButton.left,
+                                     y: likeButton.top - 10 - size,
+                                     width: size,
+                                     height: size)
+        profileButton.layer.cornerRadius = size / 2
     }
     
     // MARK: - Selectors
@@ -107,6 +123,10 @@ class PostViewController: UIViewController {
         let vc = UIActivityViewController(activityItems: [url],
                                           applicationActivities: [])
         present(vc, animated: true)
+    }
+    
+    @objc func didTapProfileButton() {
+        delegate?.postViewController(self, didTapProfileButtonFor: model)
     }
     
     @objc func didDoubleTap(_ gesture: UITapGestureRecognizer) {
