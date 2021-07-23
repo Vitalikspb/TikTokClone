@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		532DBD6C26AACB1900A3C2AF /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */; };
 		53740B1B26A97E1500920092 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1A26A97E1500920092 /* AppDelegate.swift */; };
 		53740B1D26A97E1500920092 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1C26A97E1500920092 /* SceneDelegate.swift */; };
 		53740B1F26A97E1500920092 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1E26A97E1500920092 /* HomeViewController.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		3AF33EDB037F6D4CD20DE198 /* Pods_TikTok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikTok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		53740B1726A97E1500920092 /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53740B1A26A97E1500920092 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53740B1C26A97E1500920092 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		53740B4926A9875500920092 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				53740B3B26A986E100920092 /* NotificationsViewController.swift in Sources */,
 				53740B4126A9870F00920092 /* SignInViewController.swift in Sources */,
 				5392F26D26A9D5370014DD40 /* PostModel.swift in Sources */,
+				532DBD6C26AACB1900A3C2AF /* CommentsTableViewCell.swift in Sources */,
 				53740B3D26A986EE00920092 /* ProfileViewController.swift in Sources */,
 				53740B4F26A9879400920092 /* StorageManager.swift in Sources */,
 				53740B1B26A97E1500920092 /* AppDelegate.swift in Sources */,
