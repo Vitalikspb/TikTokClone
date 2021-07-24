@@ -26,6 +26,8 @@ class ExploreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ExploreManager.shared.delegate = self
+        
         view.backgroundColor = .systemBackground
         
         configureModels()
@@ -45,150 +47,57 @@ class ExploreViewController: UIViewController {
         searchBar.delegate = self
     }
     
-    func configureModels() {
-        var cells = [ExploreCell]()
-        for _ in 0...1000 {
-            let cell = ExploreCell.banner(
-                viewModel: ExplorBannerViewModel(
-                    image: nil,
-                    title: "Foo",
-                    handler: {
-                        
-                    }))
-            cells.append(cell)
-        }
+    private func configureModels() {
+        
         // banner
         sections.append(
             ExploreSection(type: .banners,
-                           cells: cells
+                           cells: ExploreManager.shared.getExploreBanners().compactMap( {
+                            return ExploreCell.banner(viewModel: $0)
+                           })
             )
         )
         
-        var posts = [ExploreCell]()
-        for _ in 0...40 {
-            posts.append(
-                ExploreCell.post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                    
-                })))
-        }
+        // users
+        sections.append(
+            ExploreSection(type: .users,
+                           cells: ExploreManager.shared.getExploreCreators().compactMap({
+                            return ExploreCell.user(viewModel: $0)
+                           })
+            )
+        )
         
         // trending posts
         sections.append(
             ExploreSection(type: .trendingPosts,
-                           cells: posts
+                           cells: ExploreManager.shared.getExploreTrendingPosts().compactMap({
+                            return ExploreCell.post(viewModel: $0)
+                           })
             )
         )
-        // users
-        sections.append(
-            ExploreSection(type: .users,
-                           cells: [
-                            .user(viewModel: ExplorUserViewModel(profilePictureURL: nil, username: "", followerCount: 0, handler: {
-                        
-                           })),
-                            .user(viewModel: ExplorUserViewModel(profilePictureURL: nil, username: "", followerCount: 0, handler: {
-                        
-                           })),
-                            .user(viewModel: ExplorUserViewModel(profilePictureURL: nil, username: "", followerCount: 0, handler: {
-                        
-                           })),
-                            .user(viewModel: ExplorUserViewModel(profilePictureURL: nil, username: "", followerCount: 0, handler: {
-                        
-                           })),
-                           ]
-            )
-        )
+        
         // trending hashtags
         sections.append(
             ExploreSection(type: .trendingHashtags,
-                           cells: [
-                            .hashtag(viewModel: ExplorHashtagViewModel(text: "for you", icon: nil, count: 1, handler: {
-                                
-                            })),
-                            .hashtag(viewModel: ExplorHashtagViewModel(text: "for you", icon: nil, count: 1, handler: {
-                                
-                            })),
-                            .hashtag(viewModel: ExplorHashtagViewModel(text: "for you", icon: nil, count: 1, handler: {
-                                
-                            })),
-                            .hashtag(viewModel: ExplorHashtagViewModel(text: "for you", icon: nil, count: 1, handler: {
-                                
-                            }))
-                           ]
-            )
-        )
-        // recommended
-        sections.append(
-            ExploreSection(type: .recommended,
-                           cells: [
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           })),
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           })),
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           })),
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           })),
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           })),
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           }))
-                           ]
+                           cells: ExploreManager.shared.getExploreHashtags().compactMap({
+                            return ExploreCell.hashtag(viewModel: $0)
+                           })
             )
         )
         // popular
         sections.append(
             ExploreSection(type: .popular,
-                           cells: [
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           })),
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           })),
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           })),
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           })),
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           })),
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           }))
-                           ]
+                           cells: ExploreManager.shared.getExplorePopularPosts().compactMap({
+                            return ExploreCell.post(viewModel: $0)
+                           })
             )
         )
-        // new
+        // new/recent
         sections.append(
             ExploreSection(type: .new,
-                           cells: [
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           })),
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           })),
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           })),
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           })),
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           })),
-                            .post(viewModel: ExplorPostViewModel(thumbnailImage: nil, caption: "", handler: {
-                            
-                           }))
-                           ]
+                           cells: ExploreManager.shared.getExploreRecentPosts().compactMap({
+                            return ExploreCell.post(viewModel: $0)
+                           })
             )
         )
         
@@ -344,6 +253,24 @@ class ExploreViewController: UIViewController {
 
 extension ExploreViewController: UISearchBarDelegate {
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Cancel",
+            style: .done,
+            target: self,
+            action: #selector(didTapCancel))
+    }
+    
+    @objc func didTapCancel() {
+        searchBar.text = nil
+        searchBar.resignFirstResponder()
+        navigationItem.rightBarButtonItem = nil
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        navigationItem.rightBarButtonItem = nil
+    }
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
@@ -363,19 +290,32 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         switch model {
         case .banner(let viewModel):
-            break
+            viewModel.handler()
         case .post(let viewModel):
-            break
+            viewModel.handler()
         case .hashtag(let viewModel):
-            break
+            viewModel.handler()
         case .user(let viewModel):
-            break
+            viewModel.handler()
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         cell.backgroundColor = .red
         return cell
     }
+}
+
+// MARK: - ExploreManagerDelegate
+
+extension ExploreViewController: ExploreManagerDelegate {
     
+    func didTapHashtag(_ hashtag: String) {
+        searchBar.text = hashtag
+        searchBar.becomeFirstResponder()
+    }
+    
+    func pushViewController(_ vc: UIViewController) {
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
