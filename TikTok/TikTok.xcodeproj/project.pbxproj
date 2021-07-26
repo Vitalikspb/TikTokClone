@@ -32,6 +32,8 @@
 		5386263426AEBA82004DF707 /* ExplorePostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386263326AEBA82004DF707 /* ExplorePostCollectionViewCell.swift */; };
 		5386263626AEBA8B004DF707 /* ExploreUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386263526AEBA8B004DF707 /* ExploreUserCollectionViewCell.swift */; };
 		5386263826AEBA93004DF707 /* ExploreHashtagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386263726AEBA93004DF707 /* ExploreHashtagCollectionViewCell.swift */; };
+		5386263B26AEE079004DF707 /* AuthField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386263A26AEE079004DF707 /* AuthField.swift */; };
+		5386263D26AEE087004DF707 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386263C26AEE087004DF707 /* AuthButton.swift */; };
 		5392F26B26A9CFD40014DD40 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392F26A26A9CFD40014DD40 /* Extension.swift */; };
 		5392F26D26A9D5370014DD40 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392F26C26A9D5370014DD40 /* PostModel.swift */; };
 		5392F26F26AA01920014DD40 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392F26E26AA01920014DD40 /* CommentsViewController.swift */; };
@@ -79,6 +81,8 @@
 		5386263326AEBA82004DF707 /* ExplorePostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePostCollectionViewCell.swift; sourceTree = "<group>"; };
 		5386263526AEBA8B004DF707 /* ExploreUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreUserCollectionViewCell.swift; sourceTree = "<group>"; };
 		5386263726AEBA93004DF707 /* ExploreHashtagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreHashtagCollectionViewCell.swift; sourceTree = "<group>"; };
+		5386263A26AEE079004DF707 /* AuthField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthField.swift; sourceTree = "<group>"; };
+		5386263C26AEE087004DF707 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		5392F26A26A9CFD40014DD40 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5392F26C26A9D5370014DD40 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		5392F26E26AA01920014DD40 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
@@ -226,10 +230,9 @@
 		53740B3526A986AE00920092 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				5386263926AEDD78004DF707 /* Authentication */,
 				53740B3E26A9870500920092 /* UserListViewController.swift */,
-				53740B4026A9870F00920092 /* SignInViewController.swift */,
 				53740B4A26A9876B00920092 /* PostViewController.swift */,
-				53740B4226A9871800920092 /* SignUpViewController.swift */,
 				53740B4426A9872100920092 /* SettingsViewController.swift */,
 				5392F26E26AA01920014DD40 /* CommentsViewController.swift */,
 			);
@@ -252,8 +255,19 @@
 				5386263326AEBA82004DF707 /* ExplorePostCollectionViewCell.swift */,
 				5386263526AEBA8B004DF707 /* ExploreUserCollectionViewCell.swift */,
 				5386263726AEBA93004DF707 /* ExploreHashtagCollectionViewCell.swift */,
+				5386263A26AEE079004DF707 /* AuthField.swift */,
+				5386263C26AEE087004DF707 /* AuthButton.swift */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		5386263926AEDD78004DF707 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				53740B4026A9870F00920092 /* SignInViewController.swift */,
+				53740B4226A9871800920092 /* SignUpViewController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		80E5F8FDAC673202D7722041 /* Frameworks */ = {
@@ -407,6 +421,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5386263D26AEE087004DF707 /* AuthButton.swift in Sources */,
+				5386263B26AEE079004DF707 /* AuthField.swift in Sources */,
 				53740B5526A987CB00920092 /* HapticsManager.swift in Sources */,
 				5386263826AEBA93004DF707 /* ExploreHashtagCollectionViewCell.swift in Sources */,
 				5392F27126AA0A540014DD40 /* PostComments.swift in Sources */,
