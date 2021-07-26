@@ -13,15 +13,15 @@ class AuthButton: UIButton {
     
     enum ButtonType {
         case signIn
-        case signOut
+        case signUp
         case plain
         
         var title: String {
             switch self {
             case .signIn:
                 return "Sign In"
-            case .signOut:
-                return "Sign Out"
+            case .signUp:
+                return "Sign Up"
             case .plain:
                 return "-"
             }
@@ -50,7 +50,7 @@ class AuthButton: UIButton {
         
         switch type {
         case .signIn: backgroundColor = .systemBlue
-        case .signOut: backgroundColor = .systemGreen
+        case .signUp: backgroundColor = .systemGreen
         case .plain:
             setTitleColor(.link, for: .normal)
             backgroundColor = .clear

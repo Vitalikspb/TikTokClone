@@ -43,6 +43,11 @@ class SignInViewController: UIViewController {
         configureButtons()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        emailField.becomeFirstResponder()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -122,8 +127,8 @@ class SignInViewController: UIViewController {
             let alert = UIAlertController(title: "Woops", message: "Please enter a valid amail and password to sign in", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
             present(alert, animated: true)
-            return
             
+            return
         }
         
         AuthManager.shared.signIn(with: email,

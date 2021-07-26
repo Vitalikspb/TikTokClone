@@ -12,11 +12,14 @@ class AuthField: UITextField {
     private let type: FieldType
     
     enum FieldType {
+        case username
         case email
         case password
         
         var title: String {
             switch self {
+            case .username:
+                return "Username"
             case .email:
                 return "Email address"
             case .password:
@@ -46,6 +49,7 @@ class AuthField: UITextField {
         leftViewMode = .always
         returnKeyType = .done
         autocorrectionType = .no
+        autocapitalizationType = .none
         
         if type == .password {
             isSecureTextEntry = true
