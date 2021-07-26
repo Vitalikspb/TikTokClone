@@ -28,6 +28,10 @@
 		53740B5326A987BA00920092 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B5226A987BA00920092 /* AuthenticationManager.swift */; };
 		53740B5526A987CB00920092 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B5426A987CB00920092 /* HapticsManager.swift */; };
 		53740B5726A98AAD00920092 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53740B5626A98AAD00920092 /* GoogleService-Info.plist */; };
+		5386263226AEBA5E004DF707 /* ExploreBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386263126AEBA5E004DF707 /* ExploreBannerCollectionViewCell.swift */; };
+		5386263426AEBA82004DF707 /* ExplorePostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386263326AEBA82004DF707 /* ExplorePostCollectionViewCell.swift */; };
+		5386263626AEBA8B004DF707 /* ExploreUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386263526AEBA8B004DF707 /* ExploreUserCollectionViewCell.swift */; };
+		5386263826AEBA93004DF707 /* ExploreHashtagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386263726AEBA93004DF707 /* ExploreHashtagCollectionViewCell.swift */; };
 		5392F26B26A9CFD40014DD40 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392F26A26A9CFD40014DD40 /* Extension.swift */; };
 		5392F26D26A9D5370014DD40 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392F26C26A9D5370014DD40 /* PostModel.swift */; };
 		5392F26F26AA01920014DD40 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392F26E26AA01920014DD40 /* CommentsViewController.swift */; };
@@ -71,6 +75,10 @@
 		53740B5226A987BA00920092 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		53740B5426A987CB00920092 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		53740B5626A98AAD00920092 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5386263126AEBA5E004DF707 /* ExploreBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreBannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		5386263326AEBA82004DF707 /* ExplorePostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePostCollectionViewCell.swift; sourceTree = "<group>"; };
+		5386263526AEBA8B004DF707 /* ExploreUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreUserCollectionViewCell.swift; sourceTree = "<group>"; };
+		5386263726AEBA93004DF707 /* ExploreHashtagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreHashtagCollectionViewCell.swift; sourceTree = "<group>"; };
 		5392F26A26A9CFD40014DD40 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5392F26C26A9D5370014DD40 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		5392F26E26AA01920014DD40 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
@@ -240,6 +248,10 @@
 			isa = PBXGroup;
 			children = (
 				532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */,
+				5386263126AEBA5E004DF707 /* ExploreBannerCollectionViewCell.swift */,
+				5386263326AEBA82004DF707 /* ExplorePostCollectionViewCell.swift */,
+				5386263526AEBA8B004DF707 /* ExploreUserCollectionViewCell.swift */,
+				5386263726AEBA93004DF707 /* ExploreHashtagCollectionViewCell.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -396,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53740B5526A987CB00920092 /* HapticsManager.swift in Sources */,
+				5386263826AEBA93004DF707 /* ExploreHashtagCollectionViewCell.swift in Sources */,
 				5392F27126AA0A540014DD40 /* PostComments.swift in Sources */,
 				53740B5126A987A600920092 /* DatabaseManager.swift in Sources */,
 				53CD09A726AAE5F100D2D487 /* ExploreSection.swift in Sources */,
@@ -406,6 +419,7 @@
 				53740B4526A9872100920092 /* SettingsViewController.swift in Sources */,
 				53740B4B26A9876B00920092 /* PostViewController.swift in Sources */,
 				53740B3926A986D400920092 /* CameraViewController.swift in Sources */,
+				5386263426AEBA82004DF707 /* ExplorePostCollectionViewCell.swift in Sources */,
 				53CD09B126AAE76500D2D487 /* ExploreHashtagViewModel.swift in Sources */,
 				53740B4726A9873B00920092 /* TabBarViewController.swift in Sources */,
 				53CD09A926AAE60700D2D487 /* ExploreCell.swift in Sources */,
@@ -415,11 +429,13 @@
 				53740B1F26A97E1500920092 /* HomeViewController.swift in Sources */,
 				5392F26B26A9CFD40014DD40 /* Extension.swift in Sources */,
 				53740B4326A9871800920092 /* SignUpViewController.swift in Sources */,
+				5386263626AEBA8B004DF707 /* ExploreUserCollectionViewCell.swift in Sources */,
 				53740B5326A987BA00920092 /* AuthenticationManager.swift in Sources */,
 				53740B3B26A986E100920092 /* NotificationsViewController.swift in Sources */,
 				53740B4126A9870F00920092 /* SignInViewController.swift in Sources */,
 				5392F26D26A9D5370014DD40 /* PostModel.swift in Sources */,
 				532DBD6C26AACB1900A3C2AF /* CommentsTableViewCell.swift in Sources */,
+				5386263226AEBA5E004DF707 /* ExploreBannerCollectionViewCell.swift in Sources */,
 				53740B3D26A986EE00920092 /* ProfileViewController.swift in Sources */,
 				53740B4F26A9879400920092 /* StorageManager.swift in Sources */,
 				53740B1B26A97E1500920092 /* AppDelegate.swift in Sources */,
