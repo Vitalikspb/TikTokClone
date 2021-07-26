@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5311428426AF25EA008DF349 /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311428326AF25EA008DF349 /* CaptionViewController.swift */; };
 		532DBD6C26AACB1900A3C2AF /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */; };
 		53740B1B26A97E1500920092 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1A26A97E1500920092 /* AppDelegate.swift */; };
 		53740B1D26A97E1500920092 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1C26A97E1500920092 /* SceneDelegate.swift */; };
@@ -34,6 +35,7 @@
 		5386263826AEBA93004DF707 /* ExploreHashtagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386263726AEBA93004DF707 /* ExploreHashtagCollectionViewCell.swift */; };
 		5386263B26AEE079004DF707 /* AuthField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386263A26AEE079004DF707 /* AuthField.swift */; };
 		5386263D26AEE087004DF707 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386263C26AEE087004DF707 /* AuthButton.swift */; };
+		5386263F26AF1F3F004DF707 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386263E26AF1F3F004DF707 /* RecordButton.swift */; };
 		5392F26B26A9CFD40014DD40 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392F26A26A9CFD40014DD40 /* Extension.swift */; };
 		5392F26D26A9D5370014DD40 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392F26C26A9D5370014DD40 /* PostModel.swift */; };
 		5392F26F26AA01920014DD40 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392F26E26AA01920014DD40 /* CommentsViewController.swift */; };
@@ -54,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		3AF33EDB037F6D4CD20DE198 /* Pods_TikTok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikTok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5311428326AF25EA008DF349 /* CaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
 		532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		53740B1726A97E1500920092 /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53740B1A26A97E1500920092 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		5386263726AEBA93004DF707 /* ExploreHashtagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreHashtagCollectionViewCell.swift; sourceTree = "<group>"; };
 		5386263A26AEE079004DF707 /* AuthField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthField.swift; sourceTree = "<group>"; };
 		5386263C26AEE087004DF707 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		5386263E26AF1F3F004DF707 /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		5392F26A26A9CFD40014DD40 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5392F26C26A9D5370014DD40 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		5392F26E26AA01920014DD40 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 				53740B3E26A9870500920092 /* UserListViewController.swift */,
 				53740B4A26A9876B00920092 /* PostViewController.swift */,
 				53740B4426A9872100920092 /* SettingsViewController.swift */,
+				5311428326AF25EA008DF349 /* CaptionViewController.swift */,
 				5392F26E26AA01920014DD40 /* CommentsViewController.swift */,
 			);
 			path = Other;
@@ -252,6 +257,7 @@
 			children = (
 				532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */,
 				5386263126AEBA5E004DF707 /* ExploreBannerCollectionViewCell.swift */,
+				5386263E26AF1F3F004DF707 /* RecordButton.swift */,
 				5386263326AEBA82004DF707 /* ExplorePostCollectionViewCell.swift */,
 				5386263526AEBA8B004DF707 /* ExploreUserCollectionViewCell.swift */,
 				5386263726AEBA93004DF707 /* ExploreHashtagCollectionViewCell.swift */,
@@ -437,6 +443,7 @@
 				53740B3926A986D400920092 /* CameraViewController.swift in Sources */,
 				5386263426AEBA82004DF707 /* ExplorePostCollectionViewCell.swift in Sources */,
 				53CD09B126AAE76500D2D487 /* ExploreHashtagViewModel.swift in Sources */,
+				5311428426AF25EA008DF349 /* CaptionViewController.swift in Sources */,
 				53740B4726A9873B00920092 /* TabBarViewController.swift in Sources */,
 				53CD09A926AAE60700D2D487 /* ExploreCell.swift in Sources */,
 				5392F26F26AA01920014DD40 /* CommentsViewController.swift in Sources */,
@@ -447,6 +454,7 @@
 				53740B4326A9871800920092 /* SignUpViewController.swift in Sources */,
 				5386263626AEBA8B004DF707 /* ExploreUserCollectionViewCell.swift in Sources */,
 				53740B5326A987BA00920092 /* AuthenticationManager.swift in Sources */,
+				5386263F26AF1F3F004DF707 /* RecordButton.swift in Sources */,
 				53740B3B26A986E100920092 /* NotificationsViewController.swift in Sources */,
 				53740B4126A9870F00920092 /* SignInViewController.swift in Sources */,
 				5392F26D26A9D5370014DD40 /* PostModel.swift in Sources */,
