@@ -52,9 +52,11 @@ class AuthField: UITextField {
         autocapitalizationType = .none
         
         if type == .password {
+            textContentType = .oneTimeCode
             isSecureTextEntry = true
         } else {
             keyboardType = .emailAddress
+            textContentType = .emailAddress
         }
     }
     
