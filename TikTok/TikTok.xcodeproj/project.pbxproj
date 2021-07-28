@@ -210,10 +210,10 @@
 			isa = PBXGroup;
 			children = (
 				53740B4E26A9879400920092 /* StorageManager.swift */,
-				53EA099F26ACA71600BF08ED /* ExploreManager.swift */,
 				53740B5026A987A600920092 /* DatabaseManager.swift */,
 				53740B5226A987BA00920092 /* AuthenticationManager.swift */,
 				53740B5426A987CB00920092 /* HapticsManager.swift */,
+				53EA099F26ACA71600BF08ED /* ExploreManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";

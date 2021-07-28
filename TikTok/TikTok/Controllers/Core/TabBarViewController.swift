@@ -63,6 +63,7 @@ class TabBarViewController: UITabBarController {
         cameraNav.navigationBar.backgroundColor = .clear
         cameraNav.navigationBar.setBackgroundImage(UIImage(), for: .default)
         cameraNav.navigationBar.shadowImage = UIImage()
+//        cameraNav.navigationBar.tintColor = .white
         
         nav1.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "house"), tag: 1)
         nav2.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "safari"), tag: 2)
