@@ -10,8 +10,8 @@
 		5311428426AF25EA008DF349 /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311428326AF25EA008DF349 /* CaptionViewController.swift */; };
 		5311428626B1870B008DF349 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311428526B1870A008DF349 /* Notification.swift */; };
 		5311428826B189C1008DF349 /* NotificationsUserFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311428726B189C1008DF349 /* NotificationsUserFollowTableViewCell.swift */; };
-		5311428D26B18A43008DF349 /* NotificationsPostLikeTableViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311428C26B18A43008DF349 /* NotificationsPostLikeTableViewCellTableViewCell.swift */; };
-		5311428F26B18A51008DF349 /* NotificationsPostCommentTableViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311428E26B18A51008DF349 /* NotificationsPostCommentTableViewCellTableViewCell.swift */; };
+		5311428D26B18A43008DF349 /* NotificationsPostLikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311428C26B18A43008DF349 /* NotificationsPostLikeTableViewCell.swift */; };
+		5311428F26B18A51008DF349 /* NotificationsPostCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311428E26B18A51008DF349 /* NotificationsPostCommentTableViewCell.swift */; };
 		532DBD6C26AACB1900A3C2AF /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */; };
 		53740B1B26A97E1500920092 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1A26A97E1500920092 /* AppDelegate.swift */; };
 		53740B1D26A97E1500920092 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1C26A97E1500920092 /* SceneDelegate.swift */; };
@@ -63,8 +63,8 @@
 		5311428326AF25EA008DF349 /* CaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
 		5311428526B1870A008DF349 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		5311428726B189C1008DF349 /* NotificationsUserFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsUserFollowTableViewCell.swift; sourceTree = "<group>"; };
-		5311428C26B18A43008DF349 /* NotificationsPostLikeTableViewCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPostLikeTableViewCellTableViewCell.swift; sourceTree = "<group>"; };
-		5311428E26B18A51008DF349 /* NotificationsPostCommentTableViewCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPostCommentTableViewCellTableViewCell.swift; sourceTree = "<group>"; };
+		5311428C26B18A43008DF349 /* NotificationsPostLikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPostLikeTableViewCell.swift; sourceTree = "<group>"; };
+		5311428E26B18A51008DF349 /* NotificationsPostCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPostCommentTableViewCell.swift; sourceTree = "<group>"; };
 		532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		53740B1726A97E1500920092 /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53740B1A26A97E1500920092 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,8 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				5311428726B189C1008DF349 /* NotificationsUserFollowTableViewCell.swift */,
-				5311428C26B18A43008DF349 /* NotificationsPostLikeTableViewCellTableViewCell.swift */,
-				5311428E26B18A51008DF349 /* NotificationsPostCommentTableViewCellTableViewCell.swift */,
+				5311428C26B18A43008DF349 /* NotificationsPostLikeTableViewCell.swift */,
+				5311428E26B18A51008DF349 /* NotificationsPostCommentTableViewCell.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -466,7 +466,7 @@
 				5311428626B1870B008DF349 /* Notification.swift in Sources */,
 				5386263D26AEE087004DF707 /* AuthButton.swift in Sources */,
 				5386263B26AEE079004DF707 /* AuthField.swift in Sources */,
-				5311428F26B18A51008DF349 /* NotificationsPostCommentTableViewCellTableViewCell.swift in Sources */,
+				5311428F26B18A51008DF349 /* NotificationsPostCommentTableViewCell.swift in Sources */,
 				53740B5526A987CB00920092 /* HapticsManager.swift in Sources */,
 				5386263826AEBA93004DF707 /* ExploreHashtagCollectionViewCell.swift in Sources */,
 				5392F27126AA0A540014DD40 /* PostComments.swift in Sources */,
@@ -505,7 +505,7 @@
 				53740B1D26A97E1500920092 /* SceneDelegate.swift in Sources */,
 				53CD09AD26AAE73300D2D487 /* ExploreBannerViewModel.swift in Sources */,
 				53CD09AB26AAE61A00D2D487 /* ExploreSectionType.swift in Sources */,
-				5311428D26B18A43008DF349 /* NotificationsPostLikeTableViewCellTableViewCell.swift in Sources */,
+				5311428D26B18A43008DF349 /* NotificationsPostLikeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

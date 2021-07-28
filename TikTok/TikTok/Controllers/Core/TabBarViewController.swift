@@ -39,7 +39,6 @@ class TabBarViewController: UITabBarController {
             present(navVC, animated: true, completion: nil)
         }
     }
-    
     private func setUpControllers() {
         let home = HomeViewController()
         let explore = ExploreViewController()
@@ -63,6 +62,16 @@ class TabBarViewController: UITabBarController {
         cameraNav.navigationBar.backgroundColor = .clear
         cameraNav.navigationBar.setBackgroundImage(UIImage(), for: .default)
         cameraNav.navigationBar.shadowImage = UIImage()
+        
+        nav3.navigationBar.tintColor = .label
+        
+        if #available(iOS 14.0, *) {
+            nav1.navigationItem.backButtonDisplayMode = .minimal
+            nav2.navigationItem.backButtonDisplayMode = .minimal
+            nav3.navigationItem.backButtonDisplayMode = .minimal
+            nav4.navigationItem.backButtonDisplayMode = .minimal
+            cameraNav.navigationItem.backButtonDisplayMode = .minimal
+        }
         
         nav1.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "house"), tag: 1)
         nav2.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "safari"), tag: 2)

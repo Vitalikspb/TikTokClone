@@ -7,9 +7,18 @@
 
 import UIKit
 
-class NotificationsPostLikeTableViewCellTableViewCell: UITableViewCell {
+protocol NotificationsPostLikeTableViewCellDelegate: AnyObject {
+    func notificationsPostLikeTableViewCell(_ cell: NotificationsPostLikeTableViewCell,
+                                           didTapPostWith identifier: String)
+}
 
-    static let identifier = "NotificationsPostLikeTableViewCellTableViewCell"
+class NotificationsPostLikeTableViewCell: UITableViewCell {
+    
+    // MARK: - Properties
+
+    static let identifier = "NotificationsPostLikeTableViewCell"
+    weak var delegate: NotificationsPostLikeTableViewCellDelegate?
+    var postID: String?
     
     private let postThumbnailImageView: UIImageView = {
        let imageView = UIImageView()
@@ -30,6 +39,9 @@ class NotificationsPostLikeTableViewCellTableViewCell: UITableViewCell {
         label.textColor = .secondaryLabel
         return label
     }()
+    
+    // MARK: - Lifecycle
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.clipsToBounds = true
@@ -38,6 +50,10 @@ class NotificationsPostLikeTableViewCellTableViewCell: UITableViewCell {
         contentView.addSubview(datelabel)
         
         selectionStyle = .none
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapPost))
+        postThumbnailImageView.addGestureRecognizer(tap)
+        postThumbnailImageView.isUserInteractionEnabled = true
     }
     
     required init?(coder: NSCoder) {
@@ -73,10 +89,20 @@ class NotificationsPostLikeTableViewCellTableViewCell: UITableViewCell {
         datelabel.text = nil
     }
     
+    // MARK: - Selectors
+    
+    @objc func didTapPost() {
+        guard let id = postID else { return }
+        delegate?.notificationsPostLikeTableViewCell(self, didTapPostWith: id)
+    }
+    
+    // MARK: - Helper Function
+    
     func configure(with postFileName: String, model: Notification) {
         postThumbnailImageView.image = UIImage(named: "test")
         label.text = model.text
         datelabel.text = .date(with: model.date)
+        postID = postFileName
     }
 
 }
