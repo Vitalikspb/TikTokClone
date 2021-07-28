@@ -12,7 +12,9 @@
 		5311428826B189C1008DF349 /* NotificationsUserFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311428726B189C1008DF349 /* NotificationsUserFollowTableViewCell.swift */; };
 		5311428D26B18A43008DF349 /* NotificationsPostLikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311428C26B18A43008DF349 /* NotificationsPostLikeTableViewCell.swift */; };
 		5311428F26B18A51008DF349 /* NotificationsPostCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311428E26B18A51008DF349 /* NotificationsPostCommentTableViewCell.swift */; };
+		5311429126B1BD67008DF349 /* ProfileHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311429026B1BD67008DF349 /* ProfileHeaderCollectionReusableView.swift */; };
 		532DBD6C26AACB1900A3C2AF /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */; };
+		534AF96326B1C4D200B78E7A /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534AF96226B1C4D200B78E7A /* ProfileHeaderViewModel.swift */; };
 		53740B1B26A97E1500920092 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1A26A97E1500920092 /* AppDelegate.swift */; };
 		53740B1D26A97E1500920092 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1C26A97E1500920092 /* SceneDelegate.swift */; };
 		53740B1F26A97E1500920092 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1E26A97E1500920092 /* HomeViewController.swift */; };
@@ -65,7 +67,9 @@
 		5311428726B189C1008DF349 /* NotificationsUserFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsUserFollowTableViewCell.swift; sourceTree = "<group>"; };
 		5311428C26B18A43008DF349 /* NotificationsPostLikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPostLikeTableViewCell.swift; sourceTree = "<group>"; };
 		5311428E26B18A51008DF349 /* NotificationsPostCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPostCommentTableViewCell.swift; sourceTree = "<group>"; };
+		5311429026B1BD67008DF349 /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
+		534AF96226B1C4D200B78E7A /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		53740B1726A97E1500920092 /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53740B1A26A97E1500920092 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53740B1C26A97E1500920092 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 		53740B3126A9864300920092 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				534AF96226B1C4D200B78E7A /* ProfileHeaderViewModel.swift */,
 				53CD09AC26AAE73300D2D487 /* ExploreBannerViewModel.swift */,
 				53CD09AE26AAE75200D2D487 /* ExplorePostViewModel.swift */,
 				53CD09B026AAE76500D2D487 /* ExploreHashtagViewModel.swift */,
@@ -279,6 +284,7 @@
 				53740B4426A9872100920092 /* SettingsViewController.swift */,
 				5311428326AF25EA008DF349 /* CaptionViewController.swift */,
 				5392F26E26AA01920014DD40 /* CommentsViewController.swift */,
+				5311429026B1BD67008DF349 /* ProfileHeaderCollectionReusableView.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -483,6 +489,7 @@
 				53CD09B126AAE76500D2D487 /* ExploreHashtagViewModel.swift in Sources */,
 				5311428826B189C1008DF349 /* NotificationsUserFollowTableViewCell.swift in Sources */,
 				5311428426AF25EA008DF349 /* CaptionViewController.swift in Sources */,
+				534AF96326B1C4D200B78E7A /* ProfileHeaderViewModel.swift in Sources */,
 				53740B4726A9873B00920092 /* TabBarViewController.swift in Sources */,
 				53CD09A926AAE60700D2D487 /* ExploreCell.swift in Sources */,
 				5392F26F26AA01920014DD40 /* CommentsViewController.swift in Sources */,
@@ -491,6 +498,7 @@
 				53740B1F26A97E1500920092 /* HomeViewController.swift in Sources */,
 				5392F26B26A9CFD40014DD40 /* Extension.swift in Sources */,
 				53740B4326A9871800920092 /* SignUpViewController.swift in Sources */,
+				5311429126B1BD67008DF349 /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				5386263626AEBA8B004DF707 /* ExploreUserCollectionViewCell.swift in Sources */,
 				53740B5326A987BA00920092 /* AuthenticationManager.swift in Sources */,
 				5386263F26AF1F3F004DF707 /* RecordButton.swift in Sources */,
