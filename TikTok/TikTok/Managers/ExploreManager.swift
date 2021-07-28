@@ -102,7 +102,11 @@ final class ExploreManager {
                 // userid to fetch post from firebase
                 DispatchQueue.main.async {
                     let postId = model.id
-                    let vc = PostViewController(model: PostModel(identifier: postId))
+                    let vc = PostViewController(
+                        model: PostModel(identifier: postId, user: User(username: "Kanye West",
+                                                                  profilePictureURL: nil,
+                                                                  identifier: UUID().uuidString
+                                                  )))
                     self?.delegate?.pushViewController(vc)
                 }
             }
@@ -120,7 +124,10 @@ final class ExploreManager {
                 // userid to fetch post from firebase
                 DispatchQueue.main.async {
                     let postId = model.id
-                    let vc = PostViewController(model: PostModel(identifier: postId))
+                    let vc = PostViewController(model: PostModel(identifier: postId, user: User(username: "Kanye West",
+                                                                                                profilePictureURL: nil,
+                                                                                                identifier: UUID().uuidString
+                                                                                )))
                     self?.delegate?.pushViewController(vc)
                 }
             }
@@ -138,7 +145,10 @@ final class ExploreManager {
                 // userid to fetch post from firebase
                 DispatchQueue.main.async {
                     let postId = model.id
-                    let vc = PostViewController(model: PostModel(identifier: postId))
+                    let vc = PostViewController(model: PostModel(identifier: postId, user: User(username: "Kanye West",
+                                                                                                profilePictureURL: nil,
+                                                                                                identifier: UUID().uuidString
+                                                                                )))
                     self?.delegate?.pushViewController(vc)
                 }
             }

@@ -6,12 +6,25 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class ProfileViewController: UIViewController {
     
-    // MARK: - Properties
+    enum PicturePickerType {
+        case camera
+        case photoLibrary
+    }
     
-    let user: User
+    // MARK: - Properties
+    private var posts = [PostModel]()
+    var user: User
+    var isCurrentUserProfile: Bool {
+        if let username = UserDefaults.standard.string(forKey: "username") {
+            return user.username.lowercased() == username.lowercased()
+        }
+        return false
+    }
+    
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -57,6 +70,8 @@ class ProfileViewController: UIViewController {
                                                                 action: #selector(didTapSettings))
         }
         
+        fetchPosts()
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -72,6 +87,17 @@ class ProfileViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    // MARK: - Hepler Function
+    
+    func fetchPosts() {
+        DatabaseManager.shared.getPosts(for: user) { [weak self] postModels in
+            DispatchQueue.main.async {
+                self?.posts = postModels
+                self?.collectionView.reloadData()
+            }
+        }
+    }
+    
 }
 
 
@@ -80,14 +106,12 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return posts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let postModel = posts[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         cell.backgroundColor = .systemBlue
         return cell
@@ -120,12 +144,13 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
                 for: indexPath) as? ProfileHeaderCollectionReusableView else {
             return UICollectionReusableView()
         }
+        
         header.delegate = self
         let viewModel = ProfileHeaderViewModel(
-            avatarImageURL: nil,
+            avatarImageURL: user.profilePictureURL,
             followerCount: 120,
             followingCount: 200,
-            isFollowing: true)
+            isFollowing: isCurrentUserProfile ? nil : false)
         header.configure(with: viewModel)
         return header
     }
@@ -155,5 +180,62 @@ extension ProfileViewController: ProfileHeaderCollectionReusableViewDelegate {
         
     }
     
+    func ProfileHeaderCollectionReusableView4(_ header: ProfileHeaderCollectionReusableView, didTapAvatarFor viewModel: ProfileHeaderViewModel) {
+        
+        guard isCurrentUserProfile else { return }
+        let actionSheet = UIAlertController(title: "Profile picture", message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            DispatchQueue.main.async {
+                self.presentProfilePicturePicker(type: .camera)
+            }
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Photo library", style: .default, handler: { _ in
+            DispatchQueue.main.async {
+                self.presentProfilePicturePicker(type: .photoLibrary)
+            }
+        }))
+        present(actionSheet, animated: true)
+    }
+    
+    func presentProfilePicturePicker(type: PicturePickerType) {
+        let picker = UIImagePickerController()
+        picker.sourceType = type == .camera ? .camera : .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true)
+    }
+    
 }
 
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return }
+        
+        ProgressHUD.show("Uploading")
+        StorageManager.shared.uploadProfilePicture(with: image) { [weak self] result in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                switch result {
+                case .success(let downloadURL):
+                    UserDefaults.standard.setValue(downloadURL.absoluteString, forKey: "profile_picture_url")
+                    
+                    self.user = User(username: self.user.username,
+                                     profilePictureURL: downloadURL,
+                                     identifier: self.user.username)
+                    ProgressHUD.showSuccess("Updated!")
+                    self.collectionView.reloadData()
+                case .failure:
+                    ProgressHUD.showError("Failed to update profile picture")
+                }
+            }
+        }
+        // upload and update UI
+    }
+}

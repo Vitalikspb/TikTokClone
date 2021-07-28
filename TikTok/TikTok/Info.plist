@@ -55,6 +55,8 @@
 	<string>Please allow access to record voice</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Please allow access to record video</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please allow access to photo library</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
