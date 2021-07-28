@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5311428426AF25EA008DF349 /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311428326AF25EA008DF349 /* CaptionViewController.swift */; };
+		5311428626B1870B008DF349 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311428526B1870A008DF349 /* Notifications.swift */; };
 		532DBD6C26AACB1900A3C2AF /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */; };
 		53740B1B26A97E1500920092 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1A26A97E1500920092 /* AppDelegate.swift */; };
 		53740B1D26A97E1500920092 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1C26A97E1500920092 /* SceneDelegate.swift */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		3AF33EDB037F6D4CD20DE198 /* Pods_TikTok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikTok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5311428326AF25EA008DF349 /* CaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
+		5311428526B1870A008DF349 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		53740B1726A97E1500920092 /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53740B1A26A97E1500920092 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				5392F27026AA0A540014DD40 /* PostComments.swift */,
 				5392F27226AA0A7B0014DD40 /* User.swift */,
 				53CD09A826AAE60700D2D487 /* ExploreCell.swift */,
+				5311428526B1870A008DF349 /* Notifications.swift */,
 				53CD09A626AAE5F100D2D487 /* ExploreSection.swift */,
 				53CD09AA26AAE61A00D2D487 /* ExploreSectionType.swift */,
 			);
@@ -427,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5311428626B1870B008DF349 /* Notifications.swift in Sources */,
 				5386263D26AEE087004DF707 /* AuthButton.swift in Sources */,
 				5386263B26AEE079004DF707 /* AuthField.swift in Sources */,
 				53740B5526A987CB00920092 /* HapticsManager.swift in Sources */,
