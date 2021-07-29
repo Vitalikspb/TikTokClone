@@ -22,6 +22,20 @@ class PostViewController: UIViewController {
     var player: AVPlayer?
     private var playerDidFinishObserver: NSObjectProtocol?
     
+    private let spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(style: .large)
+        spinner.tintColor = .label
+        spinner.hidesWhenStopped = true
+        spinner.startAnimating()
+        return spinner
+    }()
+    private let videoView: UIView = {
+       let view = UIView()
+        view.backgroundColor = .black
+        view.clipsToBounds = true
+        return view
+    }()
+    
     private let likeButton: UIButton = {
         let button = UIButton()
         button.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
@@ -76,21 +90,25 @@ class PostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addSubview(videoView)
+        videoView.addSubview(spinner)
+        view.backgroundColor = .black
+        view.addSubview(captionLabel)
+        view.addSubview(profileButton)
+        
         configureVideo()
-        
-        let colors: [UIColor] = [.red, .black, .blue, .yellow, .green]
-        view.backgroundColor = colors.randomElement()
-        
         setUpButtons()
         setUpDubleTapToLike()
         
-        view.addSubview(captionLabel)
-        view.addSubview(profileButton)
         profileButton.addTarget(self, action: #selector(didTapProfileButton), for: .touchUpInside)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        
+        videoView.frame = view.bounds
+        spinner.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        spinner.center = videoView.center
         
         let size: CGFloat = 40
         let yStart: CGFloat = view.height - (size * 4) - 30 - view.safeAreaInsets.bottom
@@ -163,23 +181,45 @@ class PostViewController: UIViewController {
                 }
             }
         }
-        
     }
     
     // MARK: - Helpers Function
     
     private func configureVideo() {
-        guard let path = Bundle.main.path(forResource: "ferrari", ofType: "mp4") else { return }
-        let url = URL(fileURLWithPath: path)
-        player = AVPlayer(url: url)
-        
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = view.bounds
-        playerLayer.videoGravity = .resizeAspectFill
-        view.layer.addSublayer(playerLayer)
-        
-        player?.volume = 0
-        player?.play()
+        StorageManager.shared.getDownloadURL(for: model) { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.spinner.stopAnimating()
+                self.spinner.removeFromSuperview()
+                
+                switch result {
+                case .success(let url):
+                    self.player = AVPlayer(url: url)
+                    
+                    let playerLayer = AVPlayerLayer(player: self.player)
+                    playerLayer.frame = self.view.bounds
+                    playerLayer.videoGravity = .resizeAspectFill
+                    self.videoView.layer.addSublayer(playerLayer)
+                    self.player?.volume = 0
+                    self.player?.play()
+                    
+                case .failure:
+//                    dummy data
+                    guard let path = Bundle.main.path(forResource: "ferrari", ofType: "mp4") else { return }
+                    let url = URL(fileURLWithPath: path)
+                    
+                    self.player = AVPlayer(url: url)
+                    
+                    let playerLayer = AVPlayerLayer(player: self.player)
+                    playerLayer.frame = self.view.bounds
+                    playerLayer.videoGravity = .resizeAspectFill
+                    self.videoView.layer.addSublayer(playerLayer)
+                    
+                    self.player?.volume = 0
+                    self.player?.play()
+                }
+            }
+        }
         
         guard let player = player else { return }
         

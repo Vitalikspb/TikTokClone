@@ -47,6 +47,7 @@
 		5392F26F26AA01920014DD40 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392F26E26AA01920014DD40 /* CommentsViewController.swift */; };
 		5392F27126AA0A540014DD40 /* PostComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392F27026AA0A540014DD40 /* PostComments.swift */; };
 		5392F27326AA0A7B0014DD40 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5392F27226AA0A7B0014DD40 /* User.swift */; };
+		53B5EC4226B29FA1008ADA60 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5EC4126B29FA1008ADA60 /* PostCollectionViewCell.swift */; };
 		53CD09A526AADBF900D2D487 /* ferrari.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 53CD09A426AADBF900D2D487 /* ferrari.mp4 */; };
 		53CD09A726AAE5F100D2D487 /* ExploreSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CD09A626AAE5F100D2D487 /* ExploreSection.swift */; };
 		53CD09A926AAE60700D2D487 /* ExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CD09A826AAE60700D2D487 /* ExploreCell.swift */; };
@@ -104,6 +105,7 @@
 		5392F26E26AA01920014DD40 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		5392F27026AA0A540014DD40 /* PostComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComments.swift; sourceTree = "<group>"; };
 		5392F27226AA0A7B0014DD40 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		53B5EC4126B29FA1008ADA60 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		53CD09A426AADBF900D2D487 /* ferrari.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ferrari.mp4; sourceTree = "<group>"; };
 		53CD09A626AAE5F100D2D487 /* ExploreSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSection.swift; sourceTree = "<group>"; };
 		53CD09A826AAE60700D2D487 /* ExploreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCell.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				5311428A26B18A08008DF349 /* Auth */,
 				5311428926B189FE008DF349 /* Notifications */,
 				532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */,
+				53B5EC4126B29FA1008ADA60 /* PostCollectionViewCell.swift */,
 				5386263E26AF1F3F004DF707 /* RecordButton.swift */,
 			);
 			path = Others;
@@ -469,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53B5EC4226B29FA1008ADA60 /* PostCollectionViewCell.swift in Sources */,
 				5311428626B1870B008DF349 /* Notification.swift in Sources */,
 				5386263D26AEE087004DF707 /* AuthButton.swift in Sources */,
 				5386263B26AEE079004DF707 /* AuthField.swift in Sources */,
