@@ -16,6 +16,10 @@
 		532DBD6C26AACB1900A3C2AF /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */; };
 		534AF96326B1C4D200B78E7A /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534AF96226B1C4D200B78E7A /* ProfileHeaderViewModel.swift */; };
 		535A21EC26B2E31400304643 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535A21EB26B2E31400304643 /* EditProfileViewController.swift */; };
+		535A21EE26B2EF8300304643 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535A21ED26B2EF8300304643 /* SwitchTableViewCell.swift */; };
+		535A21F026B2F5A800304643 /* SwitchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535A21EF26B2F5A800304643 /* SwitchCellViewModel.swift */; };
+		535A21F226B2F95400304643 /* SettingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535A21F126B2F95400304643 /* SettingSection.swift */; };
+		535A21F426B2F96600304643 /* SettingsOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535A21F326B2F96600304643 /* SettingsOption.swift */; };
 		53740B1B26A97E1500920092 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1A26A97E1500920092 /* AppDelegate.swift */; };
 		53740B1D26A97E1500920092 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1C26A97E1500920092 /* SceneDelegate.swift */; };
 		53740B1F26A97E1500920092 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1E26A97E1500920092 /* HomeViewController.swift */; };
@@ -73,6 +77,10 @@
 		532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		534AF96226B1C4D200B78E7A /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		535A21EB26B2E31400304643 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		535A21ED26B2EF8300304643 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		535A21EF26B2F5A800304643 /* SwitchCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCellViewModel.swift; sourceTree = "<group>"; };
+		535A21F126B2F95400304643 /* SettingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSection.swift; sourceTree = "<group>"; };
+		535A21F326B2F96600304643 /* SettingsOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOption.swift; sourceTree = "<group>"; };
 		53740B1726A97E1500920092 /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53740B1A26A97E1500920092 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53740B1C26A97E1500920092 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +172,15 @@
 			path = Explore;
 			sourceTree = "<group>";
 		};
+		535A21F526B2F97300304643 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				535A21F126B2F95400304643 /* SettingSection.swift */,
+				535A21F326B2F96600304643 /* SettingsOption.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		53740B0E26A97E1500920092 = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +250,7 @@
 			children = (
 				534AF96226B1C4D200B78E7A /* ProfileHeaderViewModel.swift */,
 				53CD09AC26AAE73300D2D487 /* ExploreBannerViewModel.swift */,
+				535A21EF26B2F5A800304643 /* SwitchCellViewModel.swift */,
 				53CD09AE26AAE75200D2D487 /* ExplorePostViewModel.swift */,
 				53CD09B026AAE76500D2D487 /* ExploreHashtagViewModel.swift */,
 				53CD09B226AAE77500D2D487 /* ExploreUserViewModel.swift */,
@@ -243,6 +261,7 @@
 		53740B3226A9864C00920092 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				535A21F526B2F97300304643 /* Settings */,
 				5392F26C26A9D5370014DD40 /* PostModel.swift */,
 				5392F27026AA0A540014DD40 /* PostComments.swift */,
 				5392F27226AA0A7B0014DD40 /* User.swift */,
@@ -310,6 +329,7 @@
 				5311428926B189FE008DF349 /* Notifications */,
 				532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */,
 				53B5EC4126B29FA1008ADA60 /* PostCollectionViewCell.swift */,
+				535A21ED26B2EF8300304643 /* SwitchTableViewCell.swift */,
 				5386263E26AF1F3F004DF707 /* RecordButton.swift */,
 			);
 			path = Others;
@@ -479,11 +499,13 @@
 				5311428626B1870B008DF349 /* Notification.swift in Sources */,
 				535A21EC26B2E31400304643 /* EditProfileViewController.swift in Sources */,
 				5386263D26AEE087004DF707 /* AuthButton.swift in Sources */,
+				535A21F226B2F95400304643 /* SettingSection.swift in Sources */,
 				5386263B26AEE079004DF707 /* AuthField.swift in Sources */,
 				5311428F26B18A51008DF349 /* NotificationsPostCommentTableViewCell.swift in Sources */,
 				53740B5526A987CB00920092 /* HapticsManager.swift in Sources */,
 				5386263826AEBA93004DF707 /* ExploreHashtagCollectionViewCell.swift in Sources */,
 				5392F27126AA0A540014DD40 /* PostComments.swift in Sources */,
+				535A21F026B2F5A800304643 /* SwitchCellViewModel.swift in Sources */,
 				53740B5126A987A600920092 /* DatabaseManager.swift in Sources */,
 				53CD09A726AAE5F100D2D487 /* ExploreSection.swift in Sources */,
 				53EA09A026ACA71600BF08ED /* ExploreManager.swift in Sources */,
@@ -491,6 +513,7 @@
 				53740B3F26A9870500920092 /* UserListViewController.swift in Sources */,
 				53CD09B326AAE77500D2D487 /* ExploreUserViewModel.swift in Sources */,
 				53740B4526A9872100920092 /* SettingsViewController.swift in Sources */,
+				535A21F426B2F96600304643 /* SettingsOption.swift in Sources */,
 				53740B4B26A9876B00920092 /* PostViewController.swift in Sources */,
 				53740B3926A986D400920092 /* CameraViewController.swift in Sources */,
 				5386263426AEBA82004DF707 /* ExplorePostCollectionViewCell.swift in Sources */,
@@ -516,6 +539,7 @@
 				532DBD6C26AACB1900A3C2AF /* CommentsTableViewCell.swift in Sources */,
 				5386263226AEBA5E004DF707 /* ExploreBannerCollectionViewCell.swift in Sources */,
 				53740B3D26A986EE00920092 /* ProfileViewController.swift in Sources */,
+				535A21EE26B2EF8300304643 /* SwitchTableViewCell.swift in Sources */,
 				53740B4F26A9879400920092 /* StorageManager.swift in Sources */,
 				53740B1B26A97E1500920092 /* AppDelegate.swift in Sources */,
 				53740B1D26A97E1500920092 /* SceneDelegate.swift in Sources */,

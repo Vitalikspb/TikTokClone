@@ -66,7 +66,7 @@ class ProfileViewController: UIViewController {
         collectionView.dataSource = self
         
         let username = UserDefaults.standard.string(forKey: "username") ?? "ME"
-        if title == username {
+        if title?.lowercased() == username.lowercased() {
             navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(
                                                                     systemName: "gear"),
                                                                 style: .done,

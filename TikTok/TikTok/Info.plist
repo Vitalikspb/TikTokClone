@@ -57,6 +57,8 @@
 	<string>Please allow access to record video</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Please allow access to photo library</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please allow access to video </string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
