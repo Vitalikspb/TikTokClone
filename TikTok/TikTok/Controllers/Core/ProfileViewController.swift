@@ -18,6 +18,10 @@ class ProfileViewController: UIViewController {
     // MARK: - Properties
     private var posts = [PostModel]()
     var user: User
+    private var followers = [String]()
+    private var following = [String]()
+    private var isfollower: Bool = false
+    
     var isCurrentUserProfile: Bool {
         if let username = UserDefaults.standard.string(forKey: "username") {
             return user.username.lowercased() == username.lowercased()
@@ -154,12 +158,44 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         }
         
         header.delegate = self
-        let viewModel = ProfileHeaderViewModel(
-            avatarImageURL: user.profilePictureURL,
-            followerCount: 120,
-            followingCount: 200,
-            isFollowing: isCurrentUserProfile ? nil : false)
-        header.configure(with: viewModel)
+        
+        let group = DispatchGroup()
+        group.enter()
+        group.enter()
+        group.enter()
+        
+        DatabaseManager.shared.getRelationShips(for: user, type: .followers) { [weak self] followers in
+            defer {
+                group.leave()
+            }
+            self?.followers = followers
+        }
+        DatabaseManager.shared.getRelationShips(for: user, type: .following) { [weak self] following in
+            defer {
+                group.leave()
+            }
+            self?.following = following
+        }
+        
+        DatabaseManager.shared.isValidRelationship(for: user,
+                                                   type: .followers) { isFollower in
+            defer {
+                group.leave()
+            }
+            self.isfollower = isFollower
+        }
+        
+        group.notify(queue: .main) { [weak self] in
+            guard let self = self else { return }
+            let viewModel = ProfileHeaderViewModel(
+                avatarImageURL: self.user.profilePictureURL,
+                followerCount: self.followers.count,
+                followingCount: self.following.count,
+                isFollowing: self.isCurrentUserProfile ? nil : self.isfollower)
+            header.configure(with: viewModel)
+        }
+        
+        
         return header
     }
     
@@ -173,19 +209,52 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 extension ProfileViewController: ProfileHeaderCollectionReusableViewDelegate {
     
     func ProfileHeaderCollectionReusableView1(_ header: ProfileHeaderCollectionReusableView, didTapPrimaryButtonWith viewModel: ProfileHeaderViewModel) {
-        guard let currentUsername = UserDefaults.standard.string(forKey: "username") else { return }
-        if self.user.username == currentUsername {
+        
+        if isCurrentUserProfile {
             // edit profile
-            
+            let vc = EditProfileViewController()
+            let navVC = UINavigationController(rootViewController: vc)
+            present(navVC, animated: true)
         } else {
             // follow or unfolow current users prfile that we are viewing
+            if self.isfollower {
+                // unfollow
+                DatabaseManager.shared.updateRelationship(for: user, follow: false) { [weak self] success in
+                    if success {
+                        DispatchQueue.main.async {
+                            self?.isfollower = false
+                            self?.collectionView.reloadData()
+                        }
+                    } else {
+                        // failed
+                    }
+                    
+                }
+            } else {
+                // follow
+                DatabaseManager.shared.updateRelationship(for: user, follow: true) { [weak self] success in
+                    if success {
+                    DispatchQueue.main.async {
+                        self?.isfollower = true
+                        self?.collectionView.reloadData()
+                    }
+                    } else {
+                        // failed
+                    }
+                }
+            }
         }
     }
     func ProfileHeaderCollectionReusableView2(_ header: ProfileHeaderCollectionReusableView, didTapFollowersButtonWith viewModel: ProfileHeaderViewModel) {
+        let vc = UserListViewController(type: .followers, user: user)
+        vc.users = followers
+        navigationController?.pushViewController(vc, animated: true)
         
     }
     func ProfileHeaderCollectionReusableView3(_ header: ProfileHeaderCollectionReusableView, didTapFollowingButtonWith viewModel: ProfileHeaderViewModel) {
-        
+        let vc = UserListViewController(type: .following, user: user)
+        vc.users = following
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func ProfileHeaderCollectionReusableView4(_ header: ProfileHeaderCollectionReusableView, didTapAvatarFor viewModel: ProfileHeaderViewModel) {
@@ -215,6 +284,8 @@ extension ProfileViewController: ProfileHeaderCollectionReusableViewDelegate {
     }
     
 }
+
+// MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
 
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -246,6 +317,8 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         }
     }
 }
+
+// MARK: - PostViewControllerDelegate
 
 extension ProfileViewController: PostViewControllerDelegate {
     func postViewController(_ vc: PostViewController, didTapCommentButtonFor post: PostModel) {

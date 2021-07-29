@@ -15,6 +15,7 @@
 		5311429126B1BD67008DF349 /* ProfileHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311429026B1BD67008DF349 /* ProfileHeaderCollectionReusableView.swift */; };
 		532DBD6C26AACB1900A3C2AF /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */; };
 		534AF96326B1C4D200B78E7A /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534AF96226B1C4D200B78E7A /* ProfileHeaderViewModel.swift */; };
+		535A21EC26B2E31400304643 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535A21EB26B2E31400304643 /* EditProfileViewController.swift */; };
 		53740B1B26A97E1500920092 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1A26A97E1500920092 /* AppDelegate.swift */; };
 		53740B1D26A97E1500920092 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1C26A97E1500920092 /* SceneDelegate.swift */; };
 		53740B1F26A97E1500920092 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53740B1E26A97E1500920092 /* HomeViewController.swift */; };
@@ -71,6 +72,7 @@
 		5311429026B1BD67008DF349 /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		532DBD6B26AACB1800A3C2AF /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		534AF96226B1C4D200B78E7A /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
+		535A21EB26B2E31400304643 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		53740B1726A97E1500920092 /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53740B1A26A97E1500920092 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53740B1C26A97E1500920092 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				5386263926AEDD78004DF707 /* Authentication */,
 				53740B3E26A9870500920092 /* UserListViewController.swift */,
 				53740B4A26A9876B00920092 /* PostViewController.swift */,
+				535A21EB26B2E31400304643 /* EditProfileViewController.swift */,
 				53740B4426A9872100920092 /* SettingsViewController.swift */,
 				5311428326AF25EA008DF349 /* CaptionViewController.swift */,
 				5392F26E26AA01920014DD40 /* CommentsViewController.swift */,
@@ -474,6 +477,7 @@
 			files = (
 				53B5EC4226B29FA1008ADA60 /* PostCollectionViewCell.swift in Sources */,
 				5311428626B1870B008DF349 /* Notification.swift in Sources */,
+				535A21EC26B2E31400304643 /* EditProfileViewController.swift in Sources */,
 				5386263D26AEE087004DF707 /* AuthButton.swift in Sources */,
 				5386263B26AEE079004DF707 /* AuthField.swift in Sources */,
 				5311428F26B18A51008DF349 /* NotificationsPostCommentTableViewCell.swift in Sources */,
