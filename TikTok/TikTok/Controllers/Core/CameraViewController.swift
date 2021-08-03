@@ -87,9 +87,11 @@ class CameraViewController: UIViewController {
         if captureOutput.isRecording {
             recordButton.toggle(for: .notRecording)
             captureOutput.stopRecording()
+            HapticManager.shared.vibrateForSelection()
         } else {
             guard var url = FileManager.default.urls(for: .documentDirectory,
                                                      in: .userDomainMask).first else { return }
+            HapticManager.shared.vibrateForSelection()
             url.appendPathComponent("video.mov")
             
             recordButton.toggle(for: .recording)
@@ -104,6 +106,7 @@ class CameraViewController: UIViewController {
     @objc func didTapNext() {
         // Push caption controller
         guard let url = recordedVideoURL else { return }
+        HapticManager.shared.vibrateForSelection()
         let vc = CaptionViewController(videoURL: url)
         navigationController?.pushViewController(vc, animated: true)
     }

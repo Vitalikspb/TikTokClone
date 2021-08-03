@@ -218,19 +218,13 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
         let model = sections[indexPath.section].cells[indexPath.row]
     
         switch model {
-        case .banner(let viewModel):
-            break
-            
-        case .post(let viewModel):
-            break
-            
-        case .hashtag(let viewModel):
-            break
-            
-        case .user(let viewModel):
-            break
+        case .banner(let viewModel): print("Banner: \(viewModel.title)")
+        case .post(let viewModel): print("Post: \(viewModel.caption)")
+        case .hashtag(let viewModel): print("Hashtags: \(viewModel.text)")
+        case .user(let viewModel): print("User: \(viewModel.username)")
         }
     }
+    
 }
 
 // MARK: - ExploreManagerDelegate
@@ -238,11 +232,13 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
 extension ExploreViewController: ExploreManagerDelegate {
     
     func didTapHashtag(_ hashtag: String) {
+        HapticManager.shared.vibrateForSelection()
         searchBar.text = hashtag
         searchBar.becomeFirstResponder()
     }
     
     func pushViewController(_ vc: UIViewController) {
+        HapticManager.shared.vibrateForSelection()
         navigationController?.pushViewController(vc, animated: true)
     }
     

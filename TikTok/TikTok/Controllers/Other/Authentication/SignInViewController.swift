@@ -137,11 +137,12 @@ class SignInViewController: UIViewController {
                 switch result {
                 case .success:
                     // success
+                    HapticManager.shared.vibrate(for: .success)
                     self?.dismiss(animated: true, completion: nil)
                     
-                case .failure(let error):
+                case .failure:
                     // error
-                    print(error)
+                    HapticManager.shared.vibrate(for: .error)
                     let alert = UIAlertController(title: "Woops", message: "Please check your email and password to try again", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
                     self?.present(alert, animated: true)

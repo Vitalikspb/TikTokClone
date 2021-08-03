@@ -204,6 +204,9 @@ extension HomeViewController: PostViewControllerDelegate {
             // For you
             forYouPageViewController.dataSource = nil
         }
+        
+        HapticManager.shared.vibrateForSelection()
+        
         let vc = CommentsViewController(post: post)
         vc.delegate = self
         addChild(vc)

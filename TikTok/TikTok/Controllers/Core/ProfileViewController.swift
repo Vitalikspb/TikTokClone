@@ -125,7 +125,8 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        // opern post
+        // open post
+        HapticManager.shared.vibrateForSelection()
         let post = posts[indexPath.row]
         let vc = PostViewController(model: post)
         vc.delegate = self
@@ -210,6 +211,8 @@ extension ProfileViewController: ProfileHeaderCollectionReusableViewDelegate {
     
     func ProfileHeaderCollectionReusableView1(_ header: ProfileHeaderCollectionReusableView, didTapPrimaryButtonWith viewModel: ProfileHeaderViewModel) {
         
+        HapticManager.shared.vibrateForSelection()
+        
         if isCurrentUserProfile {
             // edit profile
             let vc = EditProfileViewController()
@@ -246,12 +249,14 @@ extension ProfileViewController: ProfileHeaderCollectionReusableViewDelegate {
         }
     }
     func ProfileHeaderCollectionReusableView2(_ header: ProfileHeaderCollectionReusableView, didTapFollowersButtonWith viewModel: ProfileHeaderViewModel) {
+        HapticManager.shared.vibrateForSelection()
         let vc = UserListViewController(type: .followers, user: user)
         vc.users = followers
         navigationController?.pushViewController(vc, animated: true)
         
     }
     func ProfileHeaderCollectionReusableView3(_ header: ProfileHeaderCollectionReusableView, didTapFollowingButtonWith viewModel: ProfileHeaderViewModel) {
+        HapticManager.shared.vibrateForSelection()
         let vc = UserListViewController(type: .following, user: user)
         vc.users = following
         navigationController?.pushViewController(vc, animated: true)
@@ -260,6 +265,7 @@ extension ProfileViewController: ProfileHeaderCollectionReusableViewDelegate {
     func ProfileHeaderCollectionReusableView4(_ header: ProfileHeaderCollectionReusableView, didTapAvatarFor viewModel: ProfileHeaderViewModel) {
         
         guard isCurrentUserProfile else { return }
+        HapticManager.shared.vibrateForSelection()
         let actionSheet = UIAlertController(title: "Profile picture", message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
@@ -304,13 +310,14 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
                 switch result {
                 case .success(let downloadURL):
                     UserDefaults.standard.setValue(downloadURL.absoluteString, forKey: "profile_picture_url")
-                    
+                    HapticManager.shared.vibrate(for: .success)
                     self.user = User(username: self.user.username,
                                      profilePictureURL: downloadURL,
                                      identifier: self.user.username)
                     ProgressHUD.showSuccess("Updated!")
                     self.collectionView.reloadData()
                 case .failure:
+                    HapticManager.shared.vibrate(for: .error)
                     ProgressHUD.showError("Failed to update profile picture")
                 }
             }
