@@ -11,10 +11,10 @@ Clone some TikTok func, and UI
 - Profile
 
 ## We use 
-Firebase 
-Camera
-UserDefault
-tableView & collectionView
+- Firebase 
+- Camera
+- UserDefault
+- tableView & collectionView
 
 
 
